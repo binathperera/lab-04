@@ -1,8 +1,8 @@
-package com.example.lab3.service.impl;
+package com.example.lab4.service.impl;
 
-import com.example.lab3.model.Vehicle;
-import com.example.lab3.repository.VehicleRepository;
-import com.example.lab3.service.VehicleService;
+import com.example.lab4.model.ProductDTO;
+import com.example.lab4.repository.ProductRepository;
+import com.example.lab4.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class VehicleServiceImpl implements VehicleService {
+public class ProductServiceImpl implements ProductService {
     @Autowired
-    VehicleRepository repository;
+    ProductRepository repository;
     @Override
-    public List<Vehicle> getServicesByYear(int year) {
+    public List<ProductDTO> getServicesByYear(int year) {
         return repository.findByYear(year);
     }
 
     @Override
-    public Optional<Vehicle> getTypeById(long id) {
+    public Optional<ProductDTO> getTypeById(long id) {
         return repository.findById(id);
     }
 
