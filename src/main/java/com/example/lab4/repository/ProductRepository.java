@@ -9,8 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductDTO,Long> {
-    List<ProductDTO> findByYear(int year);
 
-    @Transactional
-    void deleteByYear(int year);
 }

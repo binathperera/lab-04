@@ -7,8 +7,5 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    public List<ProductDTO> getServicesByYear(int year);
-    public Optional<ProductDTO> getTypeById(long id);
 
-    public void deleteServicesByYear(int year);
 }

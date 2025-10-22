@@ -13,18 +13,5 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductRepository repository;
-    @Override
-    public List<ProductDTO> getServicesByYear(int year) {
-        return repository.findByYear(year);
-    }
 
-    @Override
-    public Optional<ProductDTO> getTypeById(long id) {
-        return repository.findById(id);
-    }
-
-    @Override
-    public void deleteServicesByYear(int year) {
-        repository.deleteByYear(year);
-    }
 }
