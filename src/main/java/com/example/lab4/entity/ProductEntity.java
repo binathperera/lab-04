@@ -1,4 +1,4 @@
-package com.example.lab4.model;
+package com.example.lab4.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -7,19 +7,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-public class ProductDTO {
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="product")
+public class ProductEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotEmpty(message = "Name cannot be empty")
+    @Column(name = "name",nullable = false)
     private String name;
 
-    @NotEmpty(message = "Category cannot be empty")
+    @Column(name = "category",nullable = false)
     private String category;
 
-    @Min(value = 0,message = "Price cannot be negative")
+    @Column(name = "price",nullable = false)
     private double price;
 
-    @Min(value = 0,message = "Quantity cannot be negative")
+    @Column(name = "qty",nullable = false)
     private double qty;
 
     public long getId() {
@@ -61,5 +68,4 @@ public class ProductDTO {
     public void setQty(double qty) {
         this.qty = qty;
     }
-
 }
